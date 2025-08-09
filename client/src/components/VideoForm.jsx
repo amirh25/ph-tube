@@ -5,13 +5,13 @@ import axios from 'axios';
 
 const VideoForm = () => {
   const [url, setUrl] = useState('');
-  const [title, setTitle] = useState('');  // New state for title
+  const [title, setTitle] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/videos', { url, title });  // Send title to backend
+      await axios.post('http://localhost:5000/api/videos', { url, title });
       toast.success('Video added successfully');
       navigate('/');
     } catch (error) {
@@ -28,7 +28,7 @@ const VideoForm = () => {
           className="input input-bordered w-full mb-4"
           placeholder="Enter Video Title"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}  // Update title on input change
+          onChange={(e) => setTitle(e.target.value)}
           required
         />
         <input

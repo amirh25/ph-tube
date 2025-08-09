@@ -14,7 +14,7 @@ const UpdateVideoForm = () => {
       try {
         const response = await axios.get(`http://localhost:5000/api/videos/${id}`);
         setUrl(response.data.url);
-        setTitle(response.data.title);  // Set title in the form
+        setTitle(response.data.title);  
       } catch (error) {
         toast.error('Failed to fetch video details');
       }
@@ -25,7 +25,7 @@ const UpdateVideoForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/videos/${id}`, { url, title });  // Send both title and URL
+      await axios.put(`http://localhost:5000/api/videos/${id}`, { url, title }); 
       toast.success('Video updated successfully');
       navigate('/');
     } catch (error) {
@@ -41,14 +41,14 @@ const UpdateVideoForm = () => {
           type="text"
           className="input input-bordered w-full mb-4"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}  // Update title state
+          onChange={(e) => setTitle(e.target.value)}  state
           required
         />
         <input
           type="text"
           className="input input-bordered w-full mb-4"
           value={url}
-          onChange={(e) => setUrl(e.target.value)}  // Update URL state
+          onChange={(e) => setUrl(e.target.value)} 
           required
         />
         <button type="submit" className="btn btn-primary w-full">

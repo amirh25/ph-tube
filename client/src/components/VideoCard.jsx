@@ -22,7 +22,7 @@ const VideoCard = ({ video, onDelete, onUpdate }) => {
   };
 
   const handleUpdate = () => {
-    navigate(`/update/${video.id}`);  // Navigate to update form with video ID
+    navigate(`/update/${video.id}`);
   };
 
   return (
